@@ -6,6 +6,9 @@ const MenuItem = require('./models/MenuItem')
 const bodyParser = require('body-parser');
 app.use(bodyParser.json()); //req.body
 
+require('dotenv').config();
+const  port = process.env.PORT || 3000;
+
 app.get("/",(req,res)=>{
   req.send("welcome to my hotel")
  
@@ -20,7 +23,9 @@ const menuRoutes = require('./routes/menuRoutes');
 // use the routers
 app.use('/menuitem', menuRoutes);
 
-app.listen(3000, ()=>{
+
+
+app.listen(port, ()=>{
      console.log("listener port 3000");
 })
  
