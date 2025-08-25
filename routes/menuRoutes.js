@@ -18,13 +18,13 @@ router.post('/', async(req,res)=>{
 
 router.get('/', async(req,res) => {
 try{
-    // const data = await MenuItem.find();
-    // res.send(data);
-    // console.log('MenuItem data fetch');
+    const data = await MenuItem.find();
+    res.send(data);
+    console.log('MenuItem data fetch');
 }
 catch(err){
-    // console.log(err);
-    // res.status(500).json({error: "Internal server error"});
+    console.log(err);
+    res.status(500).json({error: "Internal server error"});
 }
 })
 module.exports = router
